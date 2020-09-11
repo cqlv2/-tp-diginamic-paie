@@ -21,7 +21,7 @@ public class Entreprise {
 	private String denomination;
 	@Column(name = "adresse", nullable = false)
 	private String adresse;
-	@Column(name = "urssaf", length = 50, nullable = false)
+	@Column(name = "urssaf", length = 50, nullable = true)
 	private String urssaf;
 	@Column(name = "code_naf", length = 50, nullable = false)
 	private String codeNaf;

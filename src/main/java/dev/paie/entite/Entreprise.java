@@ -26,7 +26,6 @@ public class Entreprise {
 	@Column(name = "code_naf", length = 50, nullable = false)
 	private String codeNaf;
 
-	
 	// getteur setteur
 
 	public String getDenomination() {

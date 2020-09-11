@@ -12,24 +12,24 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 @Entity
-@Table(name="bulletin_salaire")
+@Table(name = "bulletin_salaire")
 public class BulletinSalaire {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
-	
-	@OneToOne  @JoinColumn( name="id_remuneration_employe" )
+
+	@OneToOne
+	@JoinColumn(name = "id_remuneration_employe")
 	private RemunerationEmploye remunerationEmploye;
-	
-	
-	@OneToOne  @JoinColumn( name="id_periode" )
+
+	@OneToOne
+	@JoinColumn(name = "id_periode")
 	private Periode periode;
-	
-	
-	@Column(name="prime_exceptionnelle", nullable = false)
+
+	@Column(name = "prime_exceptionnelle", nullable = false)
 	private BigDecimal primeExceptionnelle;
 
 	// getteur setteur

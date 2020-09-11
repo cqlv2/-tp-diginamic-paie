@@ -17,6 +17,7 @@ public class RemunerationEmploye {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
 	@Column(name="matricule", length = 50, nullable = false)
 	private String matricule;
 	

@@ -1,6 +1,7 @@
 package dev.paie.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -35,6 +36,14 @@ public class ProfilRemunerationService {
 	//	lecture
 	public List<ProfilRemuneration> readAll() {
 		return profilRemuRepo.findAll();
+	}
+
+
+
+
+
+	public Optional<ProfilRemuneration> readById(int id) {
+		return profilRemuRepo.findById(id);
 	}
 	
 }

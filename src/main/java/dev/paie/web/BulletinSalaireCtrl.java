@@ -7,9 +7,11 @@ import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import dev.paie.dto.BulletinPaie;
@@ -20,6 +22,7 @@ import dev.paie.entite.Cotisation;
 import dev.paie.service.BulletinSalaireService;
 
 @RestController
+@CrossOrigin
 @RequestMapping("bulletin_salaire")
 public class BulletinSalaireCtrl {
 
@@ -32,8 +35,15 @@ public class BulletinSalaireCtrl {
 	// lire tout
 	@GetMapping
 	public List<BulletinSalaire> readAll() {
+		
+		
+		
+		
+		
 		return bsService.readAll();
 	}
+	
+
 
 	// lire par id
 	@GetMapping("affichage/{id}")
@@ -42,7 +52,6 @@ public class BulletinSalaireCtrl {
 		if (reqBulletin.isPresent()) {
 
 			BulletinPaie bp = new BulletinPaie();
-
 			bp.setPeriode(reqBulletin.get().getPeriode());
 			bp.setNomEntreprise(reqBulletin.get().getRemunerationEmploye().getEntreprise().getDenomination());
 			bp.setSiretEntreprise(reqBulletin.get().getRemunerationEmploye().getEntreprise().getSiret());
@@ -112,10 +121,10 @@ public class BulletinSalaireCtrl {
 
 	// listeBulletin
 	@GetMapping("/liste")
-	public ResponseEntity<?> listBulletin() {
+	public ResponseEntity<?> listBulletin(@RequestParam int page,@RequestParam int size) {
 
 		List<BulletinPaieSamble> samples = new ArrayList<BulletinPaieSamble>();
-		List<BulletinSalaire> bulletins = bsService.readAll();
+		List<BulletinSalaire> bulletins = bsService.readAllPagination(page,size);
 		for (BulletinSalaire bulletin : bulletins) {
 
 			// SALAIRE_BASE = GRADE.NB_HEURES_BASE * GRADE.TAUX_BASE
@@ -147,7 +156,7 @@ public class BulletinSalaireCtrl {
 				}
 			}
 			BigDecimal netAPayer = netImposable.subtract(charges);
-			samples.add(new BulletinPaieSamble(bulletin.getPeriode(), bulletin.getRemunerationEmploye().getMatricule(),
+			samples.add(new BulletinPaieSamble(bulletin.getId(), bulletin.getPeriode(), bulletin.getRemunerationEmploye().getMatricule(),
 					salaireBrut, netImposable, netAPayer));
 		}
 		return ResponseEntity.ok(samples);

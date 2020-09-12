@@ -3,6 +3,7 @@ package dev.paie.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import dev.paie.entite.BulletinSalaire;
@@ -35,8 +36,10 @@ public class BulletinSalaireService {
 	public List<BulletinSalaire> readAll() {
 		return bsRepo.findAll();
 	}
-
-
+	
+	public List<BulletinSalaire> readAllPagination(int page, int size) {
+		return bsRepo.findAll(PageRequest.of(page, size)).getContent();
+	}
 
 
 

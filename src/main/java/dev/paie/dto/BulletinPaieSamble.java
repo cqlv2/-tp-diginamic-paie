@@ -7,6 +7,7 @@ import dev.paie.entite.Periode;
 
 public class BulletinPaieSamble {
 
+	Integer id;
 	Date dateCreation = new Date();
 	Periode periode;
 	String matricule;
@@ -14,14 +15,23 @@ public class BulletinPaieSamble {
 	BigDecimal netImposable;
 	BigDecimal NetAPayer;
 
-	public BulletinPaieSamble(Periode periode, String matricule, BigDecimal salaireBrut, BigDecimal netImposable,
+	public BulletinPaieSamble(Integer id, Periode periode, String matricule, BigDecimal salaireBrut, BigDecimal netImposable,
 			BigDecimal netAPayer) {
 		super();
+		this.id=id;
 		this.periode = periode;
 		this.matricule = matricule;
 		this.salaireBrut = salaireBrut;
 		this.netImposable = netImposable;
 		NetAPayer = netAPayer;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public Date getDateCreation() {

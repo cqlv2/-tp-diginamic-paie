@@ -24,36 +24,16 @@ public class RemunerationEmployerCtrl {
 		super();
 		this.remEmpServ = remEmpServ;
 	}
-	
-	
-	@PostMapping
-	public ResponseEntity<?> remuneration_employer(@RequestBody  RemunerationEmployerDto remEmpDto) {
 
-		System.err.println("ctrl");
-		System.err.println(remEmpDto.getMatricule());
-		System.err.println(remEmpDto.getEntrepriseId());
-		System.err.println(remEmpDto.getProfilRemunerationId());
-		System.err.println(remEmpDto.getGradeId());
-		System.err.println("finctrl");
-		
-		
-		RemunerationEmploye remEmp = remEmpServ.add(
-				remEmpDto.getMatricule(), 
-				remEmpDto.getEntrepriseId(),
-				remEmpDto.getProfilRemunerationId(),
-				remEmpDto.getGradeId()
-				);
-		
+	@PostMapping
+	public ResponseEntity<?> remuneration_employer(@RequestBody RemunerationEmployerDto remEmpDto) {
+
+		RemunerationEmploye remEmp = remEmpServ.add(remEmpDto.getMatricule(), remEmpDto.getEntrepriseId(),
+				remEmpDto.getProfilRemunerationId(), remEmpDto.getGradeId());
+
 		remEmpDto.setId(remEmp.getId());
 		return ResponseEntity.ok(remEmp);
 
-		
-		
 	}
-	
-	
-	
-	
-	
-	
+
 }

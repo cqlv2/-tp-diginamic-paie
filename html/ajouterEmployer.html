@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/ajouterEmployer.css">
+    <title>ajouter employer</title>
+  </head>
+  <body>
+
+<div class="filAriane">
+  <p><a href="#">Employer</a> - <a href="#">Bulletins</a></p>
+</div>
+<h1>Ajouter un employer</h1>
+<form id="form"action="index.html" method="post">
+<table>
+  <tr>
+    <td><label for="matricule">Matricule : </label></td>
+    <td><input required id="matricule" type="text" name="matricule" value=""></td>
+  </tr>
+  <tr>
+    <td><label for="entrepriseId">Entreprise : </label></td>
+    <td>
+      <select  id="entrepriseId"name="entrepriseId">
+        <option disabled selected value="">Selectionez une entreprise</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td><label for="profileId">Profile : </label></td>
+    <td>
+      <select  id="profileId" name="profileId">
+        <option disabled selected value="">Selectionez un profile</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td><label for="gradeId">Grade : </label></td>
+    <td>
+      <select  id="gradeId" name="gradeId">
+        <option disabled selected value="">Selectionez un grade</option>
+      </select>
+    </td>
+  </tr>
+</table>
+<p><input type="button" name="" value="Ajouter" onclick="sendForm()"></p>
+</form>
+<script type="text/javascript" src="js/ajouterEmployer.js"></script>
+  </body>
+</html>

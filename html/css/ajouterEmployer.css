@@ -1,0 +1,28 @@
+
+
+body>h1{
+  text-align: center;
+}
+body>form{
+  width: 50vw;
+  margin: 150px auto;
+}
+body>form>table{
+  margin: 0 auto;
+}
+
+ body>form>table td label{
+  width: 100%;
+  display: block;
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.5rem;
+
+}
+body>form>table td input, body>form>table td select{
+  width: 100%;
+}
+
+body>form>p{
+    text-align: center;
+}

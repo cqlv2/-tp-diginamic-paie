@@ -1,0 +1,28 @@
+h1{
+  text-align: center;
+}
+table{
+  border-collapse: collapse;
+  margin: 0 auto;
+
+}
+td, th{
+  border: 1px solid black;
+  height: 20px;
+  padding: 10px 25px;
+  text-align: center;
+
+}
+th{
+background-color: #aaa
+}
+tr:nth-child(2n+1){
+background-color: #eee;
+}
+tr:nth-child(2n+2){
+background-color: #ddd;
+}
+.pagination{
+  margin-top: 25px;
+  text-align: center;
+}

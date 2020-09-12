@@ -2,6 +2,7 @@ package dev.paie.web;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import dev.paie.entite.RemunerationEmploye;
 import dev.paie.service.RemunerationEmployeService;
 
 @RestController
+@CrossOrigin
 @RequestMapping("remuneration_employer")
 public class RemunerationEmployerCtrl {
 

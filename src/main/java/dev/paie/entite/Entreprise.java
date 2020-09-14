@@ -19,7 +19,7 @@ public class Entreprise {
 	private String siret;
 	@Column(name = "denomination", length = 255, nullable = false)
 	private String denomination;
-	@Column(name = "adresse", nullable = false)
+	@Column(name = "adresse", nullable = true)
 	private String adresse;
 	@Column(name = "urssaf", length = 50, nullable = true)
 	private String urssaf;

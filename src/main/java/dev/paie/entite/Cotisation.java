@@ -22,9 +22,9 @@ public class Cotisation {
 	private String code;
 	@Column(name = "libelle", length = 255, nullable = false)
 	private String libelle;
-	@Column(name = "taux_salarial", nullable = false)
+	@Column(name = "taux_salarial", nullable = false, precision = 8, scale = 6)
 	private BigDecimal tauxSalarial;
-	@Column(name = "taux_patronal", nullable = false)
+	@Column(name = "taux_patronal", nullable = false,precision = 8, scale = 6)
 	private BigDecimal tauxPatronal;
 	@Column(name = "imposable", nullable = false)
 	private Boolean imposable = false;

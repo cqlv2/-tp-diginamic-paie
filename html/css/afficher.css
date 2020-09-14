@@ -1,0 +1,39 @@
+body{
+  width: min-Content;
+  margin: 0 auto;
+}
+h1{
+  text-align: center;
+}
+#periode{
+  float: right;
+}
+
+
+table{
+  margin: 25px auto;
+  border-collapse: collapse;
+  border: solid 3px black;
+  width: 100%;
+}
+th, td{
+  border-left: solid 2px black;
+  border-right: solid 2px black;
+  height: 25px;
+  padding: 0px 25px;
+  text-align: center;
+}
+tr:nth-child(2n+1){
+  background-color: #eee
+}
+tr:nth-child(2n+1){
+  background-color: #ddd
+}
+th{
+  background-color: #bbb
+}
+.netPaye{
+  text-align: right;
+  font-weight: bold;
+
+}

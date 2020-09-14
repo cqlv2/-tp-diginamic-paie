@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/afficher.css">
+  <title>Afficher</title>
+</head>
+<body>
+  <div class="filAriane">
+    <p><a href="#">Employé</a> - <a href="#">bulletin</a></p>
+  </div>
+  <h1>Bulletin de Salaire</h1>
+  <div id="bulletinSalaire">
+
+    <div id="periode">
+      <p>Période<br>Du <span id="periodeStart"></span> au <span id="periodeEnd"></span> </p>
+      <p>Matricule <span id="matricule"></span> </p>
+    </div>
+
+
+    <div id="entreprise">
+    <p>  entreprise <br>
+      <span id="entrepriseNom"></span><br>
+      SIRET : <span id="numSiret"></span>
+    </p>
+    </div>
+
+    <div id="salaire">
+      <p>Salaire</p>
+      <table>
+        <tr>
+          <th>Rubrique</th>
+          <th>Base</th>
+          <th>Taux&nbsp;salarial</th>
+          <th>Montant&nbsp;salarial</th>
+          <th>Taux&nbsp;patronal</th>
+          <th>Cotisation&nbsp;patronal</th>
+        </tr>
+        <tr>
+          <td>Salaire&nbsp;de&nbsp;base</td>
+          <td><span id="salaireBase"></span> </td>
+          <td><span id="tauxSalarial"></span> </td>
+          <td><span id="montantSalarial"></span> </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Prime&nbsp;exept.</td>
+          <td></td>
+          <td></td>
+          <td><span id="primeExep"></span> </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Salaire&nbsp;brute</td>
+          <td></td>
+          <td></td>
+          <td><span id="salaireBrute"></span> </td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="cotisation">
+      <p>Cotisation</p>
+      <table id="tableCotisation">
+        <tr>
+          <th>Rubrique</th>
+          <th>Base</th>
+          <th>Taux&nbsp;salarial</th>
+          <th>Montant&nbsp;salarial</th>
+          <th>Taux&nbsp;patronal</th>
+          <th>Cotisation&nbsp;patronal</th>
+        </tr>
+      </table>
+
+    </div>
+
+    <div id="netImp">
+      <p>net imposable : <span id="netImpo"></span> </p>
+
+      <table id="cotisationImposable">
+        <tr>
+          <th>Rubrique</th>
+          <th>Base</th>
+          <th>Taux&nbsp;salarial</th>
+          <th>Montant&nbsp;salarial</th>
+          <th>Taux&nbsp;patronal</th>
+          <th>Cotisation&nbsp;patronal</th>
+        </tr>
+      </table>
+
+    </div>
+
+    <div class="netPaye">
+      <p>net a payer : <span id="netAPayer"></span> </p>
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+  <script type="text/javascript" src="js/ajax.js"></script>
+  <script type="text/javascript" src="js/afficher.js"></script>
+</body>
+</html>

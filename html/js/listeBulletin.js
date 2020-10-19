@@ -1,6 +1,6 @@
 
 var page=0;
-ajax("http://localhost:8080/bulletin_salaire/liste?size=10&page="+page, getList);
+ajax("https://gestionaire-paie-cql.herokuapp.com/bulletin_salaire/liste?size=10&page="+page, getList);
 
 function getList(data){
   console.log(data[0]);

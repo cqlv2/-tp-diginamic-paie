@@ -1,6 +1,7 @@
 id=(window.location.search.replace("?id=",""))
-ajax("http://localhost:8080/bulletin_salaire/affichage/"+id, getBulletin);
+// ajax("http://localhost:8080/bulletin_salaire/affichage/"+id, getBulletin);
 
+ajax("https://gestionaire-paie-cql.herokuapp.com/bulletin_salaire/affichage/"+id, getBulletin);
 
 function getBulletin(data){
 document.getElementById("periodeStart").innerHTML=data.periode.dateDebut;

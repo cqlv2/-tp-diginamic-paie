@@ -1,7 +1,11 @@
+//
+// ajax("http://localhost:8080/entreprise",setEntreprise);
+// ajax("http://localhost:8080/profil_remuneration",setProfil);
+// ajax("http://localhost:8080/grade",setGrade);
 
-ajax("http://localhost:8080/entreprise",setEntreprise);
-ajax("http://localhost:8080/profil_remuneration",setProfil);
-ajax("http://localhost:8080/grade",setGrade);
+ajax("https://gestionaire-paie-cql.herokuapp.com/entreprise",setEntreprise);
+ajax("https://gestionaire-paie-cql.herokuapp.com/profil_remuneration",setProfil);
+ajax("https://gestionaire-paie-cql.herokuapp.com/grade",setGrade);
 
 function setEntreprise(data){
   var entrepriseSelect = document.getElementById("entrepriseId");
@@ -41,7 +45,7 @@ function sendForm(){
       "profilRemunerationId" : document.querySelector("select#profileId").value,
       "gradeId" : document.querySelector("select#gradeId").value
   }
-  ajaxSubmit("http://localhost:8080/remuneration_employer",confirm, formJson);
+  ajaxSubmit("https://gestionaire-paie-cql.herokuapp.com/remuneration_employer",confirm, formJson);
 
 }
 
